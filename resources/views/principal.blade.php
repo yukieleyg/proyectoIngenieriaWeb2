@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Pokémon</title>
 	<script src="{{asset("js/jquery.js")}}"></script>
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
 	<link rel="stylesheet" href="{{asset("estilos/estilos.css")}}">
@@ -23,7 +23,7 @@
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Link</a></li>
+	        <li><a href="{{url('/pokedex')}}">Pokedex</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
@@ -49,11 +49,6 @@
 	    </div>
 	  </div>
 	</nav>
-	<section id="seccion01">
-		<article>
-			<img src="laravel-5.png" alt="">
-		</article>
-	</section>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">

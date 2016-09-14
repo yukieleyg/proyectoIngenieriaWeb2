@@ -1,9 +1,30 @@
+body
+{
+	font-size: 16px;
+}
+
 footer
 {
 	border-top: 1px black;
 	text-align: right;
 	border-top-width: 15%;
 }
+
+/*#pokemon
+{
+	background: rgba(150,150,150,0.2);
+	border-radius: 5px;
+	display: inline-block;
+	text-align: center;
+	width: 20%;
+}
+
+#pokemon span
+{
+	border-bottom: 2px solid black;
+	font-size: 2em;
+	font-weight: bold;
+}*/
 
 #seccion01
 {
@@ -18,4 +39,17 @@ footer
 #seccion01 article img
 {
 	border-radius: 5px;
+}
+
+#pokemon
+{
+	display: inline-block;
+	margin-left: 7px;
+	text-align: center;
+	width: 19%;
+}
+
+#pokemon img
+{
+	width: 190px;
 }

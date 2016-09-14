@@ -20,3 +20,5 @@
 Route::get('/', 'principalController@index');
 
 Route::get('/home', 'principalController@home');
+
+Route::get('/pokedex', 'principalController@pokedex');
