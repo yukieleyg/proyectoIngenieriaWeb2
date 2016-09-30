@@ -6,7 +6,7 @@ body
 footer
 {
 	border-top: 1px black;
-	text-align: right;
+	text-align: center;
 	border-top-width: 15%;
 }
 
@@ -25,6 +25,34 @@ footer
 	font-size: 2em;
 	font-weight: bold;
 }*/
+#altura, #peso, #descripcion
+{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#artPDF01
+{
+	display: inline-block;
+	text-align: center;
+}
+
+#artPDF02
+{
+	display: inline-block;
+	width: 50%;
+}
+
+#artPDF03
+{
+	display: inline-block;
+	width: 45%;
+}
+
+#logo
+{
+	width: 60px;
+}
 
 #seccion01
 {
@@ -41,6 +69,16 @@ footer
 	border-radius: 5px;
 }
 
+#tipos
+{
+	text-align: center;
+}
+
+#tipos a
+{
+	width: 111px;
+}
+
 #pokemon
 {
 	display: inline-block;
@@ -52,4 +90,11 @@ footer
 #pokemon img
 {
 	width: 190px;
+}
+
+#pokePDF
+{
+	border-bottom: 1px solid black;
+	/*text-align: center;*/
+	width: 270px;
 }

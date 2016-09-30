@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2016 a las 08:30:16
+-- Tiempo de generación: 30-09-2016 a las 04:44:52
 -- Versión del servidor: 5.6.26-log
 -- Versión de PHP: 5.6.12
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `pokemon` (
-  `pokemonID` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nombre` varchar(15) NOT NULL,
   `peso` double NOT NULL,
   `altura` double NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `pokemon` (
 -- Volcado de datos para la tabla `pokemon`
 --
 
-INSERT INTO `pokemon` (`pokemonID`, `nombre`, `peso`, `altura`, `ataque`, `polvos`, `foto`, `descripcion`, `created_at`, `updated_at`) VALUES
+INSERT INTO `pokemon` (`id`, `nombre`, `peso`, `altura`, `ataque`, `polvos`, `foto`, `descripcion`, `created_at`, `updated_at`) VALUES
 (1, 'Bulbasaur', 6.9, 0.7, 0, 0, '001-Bulbasaur.png', 'A Bulbasaur es fácil verle echándose una siesta al sol. La semilla que tiene en el lomo va creciendo cada vez más a medida que absorbe los rayos del sol.', '2016-09-14 01:39:24', '0000-00-00 00:00:00'),
 (2, 'Ivysaur', 13, 1, 0, 0, '002-Ivysaur.png', 'Este Pokémon lleva un bulbo en el lomo y, para poder con su peso, tiene unas patas y un tronco gruesos y fuertes. Si empieza a pasar más tiempo al sol, será porque el bulbo está a punto de hacerse una flor grande.', '2016-09-14 04:12:17', '0000-00-00 00:00:00'),
 (3, 'Venusaur', 100, 2, 0, 0, '003-Venusaur.png', 'Venusaur tiene una flor enorme en el lomo que, según parece, adquiere unos colores muy vivos si está bien nutrido y le da mucho el sol. El aroma delicado de la flor tiene un efecto relajante en el ánimo de las personas.', '2016-09-14 04:14:50', '0000-00-00 00:00:00'),
@@ -85,6 +85,112 @@ INSERT INTO `pokemon` (`pokemonID`, `nombre`, `peso`, `altura`, `ataque`, `polvo
 (39, 'Jigglypuff', 5.5, 0.5, 0, 0, '039-Jigglypuff.png', 'Jigglypuff tiene unas cuerdas vocales que ajustan sin problema la longitud de onda de su voz. Este Pokémon usa la habilidad que tiene para cantar con la longitud de onda necesaria para adormecer a su rival.', '2016-09-14 06:09:29', '0000-00-00 00:00:00'),
 (40, 'Wigglytuff', 12, 1, 0, 0, '040-Wigglytuff.png', 'Wigglytuff tiene unos ojos enormes con forma de platillo, que siempre están cubiertos de lágrimas. Si se le metiera algo en el ojo, enseguida se le saldría solo.', '2016-09-14 06:11:52', '0000-00-00 00:00:00');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pokemon_tipos`
+--
+
+CREATE TABLE IF NOT EXISTS `pokemon_tipos` (
+  `id` int(11) NOT NULL,
+  `id_pokemon` int(11) NOT NULL,
+  `id_tipo` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `pokemon_tipos`
+--
+
+INSERT INTO `pokemon_tipos` (`id`, `id_pokemon`, `id_tipo`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2016-09-28 03:08:26', '0000-00-00 00:00:00'),
+(2, 1, 2, '2016-09-28 03:08:41', '0000-00-00 00:00:00'),
+(3, 2, 1, '2016-09-28 03:09:13', '0000-00-00 00:00:00'),
+(4, 2, 2, '2016-09-28 03:09:33', '0000-00-00 00:00:00'),
+(5, 3, 1, '2016-09-28 03:09:38', '0000-00-00 00:00:00'),
+(6, 3, 2, '2016-09-28 03:09:43', '0000-00-00 00:00:00'),
+(7, 4, 3, '2016-09-28 03:10:10', '0000-00-00 00:00:00'),
+(8, 5, 3, '2016-09-28 03:10:32', '0000-00-00 00:00:00'),
+(9, 6, 3, '2016-09-28 03:10:38', '0000-00-00 00:00:00'),
+(10, 6, 4, '2016-09-28 03:10:48', '0000-00-00 00:00:00'),
+(11, 7, 5, '2016-09-28 03:11:10', '0000-00-00 00:00:00'),
+(12, 8, 5, '2016-09-28 03:11:17', '0000-00-00 00:00:00'),
+(13, 9, 5, '2016-09-28 03:11:23', '0000-00-00 00:00:00'),
+(14, 10, 6, '2016-09-28 03:11:39', '0000-00-00 00:00:00'),
+(15, 11, 6, '2016-09-28 03:11:46', '0000-00-00 00:00:00'),
+(16, 12, 6, '2016-09-28 03:12:03', '0000-00-00 00:00:00'),
+(17, 12, 4, '2016-09-28 03:12:11', '0000-00-00 00:00:00'),
+(18, 13, 6, '2016-09-28 03:12:46', '0000-00-00 00:00:00'),
+(19, 13, 2, '2016-09-28 03:13:07', '0000-00-00 00:00:00'),
+(20, 14, 6, '2016-09-28 03:13:29', '0000-00-00 00:00:00'),
+(21, 14, 2, '2016-09-28 03:13:40', '0000-00-00 00:00:00'),
+(22, 15, 6, '2016-09-28 03:14:21', '0000-00-00 00:00:00'),
+(23, 15, 2, '2016-09-28 03:14:30', '0000-00-00 00:00:00'),
+(24, 16, 7, '2016-09-28 03:14:50', '0000-00-00 00:00:00'),
+(25, 16, 4, '2016-09-28 03:15:01', '0000-00-00 00:00:00'),
+(26, 17, 7, '2016-09-28 03:15:19', '0000-00-00 00:00:00'),
+(27, 17, 4, '2016-09-28 03:15:26', '0000-00-00 00:00:00'),
+(28, 18, 7, '2016-09-28 03:16:08', '0000-00-00 00:00:00'),
+(29, 18, 4, '2016-09-28 03:16:14', '0000-00-00 00:00:00'),
+(30, 19, 7, '2016-09-28 03:17:40', '0000-00-00 00:00:00'),
+(31, 20, 7, '2016-09-28 03:17:53', '0000-00-00 00:00:00'),
+(32, 21, 7, '2016-09-28 03:18:08', '0000-00-00 00:00:00'),
+(33, 21, 4, '2016-09-28 03:18:17', '0000-00-00 00:00:00'),
+(34, 22, 7, '2016-09-28 03:18:34', '0000-00-00 00:00:00'),
+(35, 22, 4, '2016-09-28 03:18:41', '0000-00-00 00:00:00'),
+(36, 23, 2, '2016-09-28 03:18:55', '0000-00-00 00:00:00'),
+(37, 24, 2, '2016-09-28 03:19:10', '0000-00-00 00:00:00'),
+(38, 25, 8, '2016-09-28 03:19:29', '0000-00-00 00:00:00'),
+(39, 26, 8, '2016-09-28 03:19:43', '0000-00-00 00:00:00'),
+(40, 27, 9, '2016-09-28 03:19:59', '0000-00-00 00:00:00'),
+(41, 28, 9, '2016-09-28 03:20:14', '0000-00-00 00:00:00'),
+(42, 29, 2, '2016-09-28 03:21:22', '0000-00-00 00:00:00'),
+(43, 30, 2, '2016-09-28 03:21:34', '0000-00-00 00:00:00'),
+(44, 31, 2, '2016-09-28 03:21:51', '0000-00-00 00:00:00'),
+(45, 31, 9, '2016-09-28 03:22:00', '0000-00-00 00:00:00'),
+(46, 32, 2, '2016-09-28 03:22:23', '0000-00-00 00:00:00'),
+(47, 33, 2, '2016-09-28 03:22:35', '0000-00-00 00:00:00'),
+(48, 34, 2, '2016-09-28 03:22:48', '0000-00-00 00:00:00'),
+(49, 34, 9, '2016-09-28 03:23:01', '0000-00-00 00:00:00'),
+(50, 35, 10, '2016-09-28 03:23:17', '0000-00-00 00:00:00'),
+(51, 36, 10, '2016-09-28 03:23:32', '0000-00-00 00:00:00'),
+(52, 37, 3, '2016-09-28 03:23:45', '0000-00-00 00:00:00'),
+(53, 38, 3, '2016-09-28 03:23:59', '0000-00-00 00:00:00'),
+(54, 39, 7, '2016-09-28 03:24:18', '0000-00-00 00:00:00'),
+(55, 39, 10, '2016-09-28 03:24:25', '0000-00-00 00:00:00'),
+(56, 40, 7, '2016-09-28 03:24:39', '0000-00-00 00:00:00'),
+(57, 40, 10, '2016-09-28 03:24:47', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipos`
+--
+
+CREATE TABLE IF NOT EXISTS `tipos` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(15) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tipos`
+--
+
+INSERT INTO `tipos` (`id`, `nombre`, `created_at`, `updated_at`) VALUES
+(1, 'Planta', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(2, 'Veneno', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(3, 'Fuego', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(4, 'Volador', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(5, 'Agua', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(6, 'Bicho', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(7, 'Normal', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(8, 'Eléctrico', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(9, 'Tierra', '2016-09-21 17:47:30', '0000-00-00 00:00:00'),
+(10, 'Hada', '2016-09-21 17:47:30', '0000-00-00 00:00:00');
+
 --
 -- Índices para tablas volcadas
 --
@@ -93,8 +199,34 @@ INSERT INTO `pokemon` (`pokemonID`, `nombre`, `peso`, `altura`, `ataque`, `polvo
 -- Indices de la tabla `pokemon`
 --
 ALTER TABLE `pokemon`
-  ADD PRIMARY KEY (`pokemonID`);
+  ADD PRIMARY KEY (`id`);
 
+--
+-- Indices de la tabla `pokemon_tipos`
+--
+ALTER TABLE `pokemon_tipos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tipos`
+--
+ALTER TABLE `tipos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `pokemon_tipos`
+--
+ALTER TABLE `pokemon_tipos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+--
+-- AUTO_INCREMENT de la tabla `tipos`
+--
+ALTER TABLE `tipos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

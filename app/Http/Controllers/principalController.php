@@ -3,21 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use DB;
+use App\tipos;
+use App\pokemon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class principalController extends Controller
 {
    public function index(){
-   		return view('principal');
+         $tipos = tipos::all();
+   		return view('/principal', compact('tipos'));
    }
    public function home(){
-   		return view('inicio');
+         $tipos = tipos::all();
+   		return view('/inicio', compact('tipos'));
    }
    public function pokedex(){
-   		$pokemons = DB::select('select * from pokemon');
-   		return view('pokedex')->with('pokemons', $pokemons);
+   		$pokemons = pokemon::all();
+         $tipos = tipos::all();
+         //$total = sum('select * from tipos');
+   		return view('/pokedex', compact('pokemons', 'tipos'));
    }
 }

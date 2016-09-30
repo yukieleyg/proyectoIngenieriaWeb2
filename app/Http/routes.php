@@ -22,3 +22,9 @@ Route::get('/', 'principalController@index');
 Route::get('/home', 'principalController@home');
 
 Route::get('/pokedex', 'principalController@pokedex');
+
+Route::get('/tipos', 'tiposController@mostrarTipos');
+
+Route::get('/tipos/{id}', 'tiposController@mostrarPokemon');
+
+Route::get('/pdfPokemon/{id}', 'pokemonController@pdfPokemon');
