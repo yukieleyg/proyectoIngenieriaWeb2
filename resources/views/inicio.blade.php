@@ -1,12 +1,10 @@
 @extends('principal')
 @section('encabezado')
-	<h2>Pokémon</h2>
+	<h2>Bienvenido Maestro Pokemon</h2>
 @stop
 
 @section('contenido')
-	<div class="jumbotron">
-	  <h1>{{ 'BULBASAUR' }}</h1>
-	  <p>Este es un sistema que permite llevar un control de la gestión de proyectos de Software. Brindando los procesos más importantes para llevar a cabo un proyecto de calidad.</p>
-	  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+	<div align="middle">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/1yyOH5ZZamE" frameborder="0" allowfullscreen></iframe>
 	</div>
 @stop
