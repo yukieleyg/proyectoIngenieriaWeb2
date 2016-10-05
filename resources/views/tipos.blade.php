@@ -19,11 +19,18 @@
 				  </div>
 				  <div class="panel-body">
 				    <img src="{{ asset("img/pokemon/$p->foto") }}" alt="">
+				    Peso: {{$p->peso}} kg<br>
+				    Altura: {{$p->altura}} m<br>
+				    <span class="ataquePokemon">Ataque: {{$p->ataque}}</span>
+				    <a href="{{url('/darPoder')}}/{{$p->id}}/{{$tipo->id}}" class="glyphicon glyphicon-plus"></a>
+				    <br>
 					<a href="{{url('/pdfPokemon')}}/{{$p->id}}">Ver PDF</a>
 				  </div>
 				</div>
 			@endforeach
-			{!! $pokemon->links() !!}
+			<article class="paginacion">
+				{!! $pokemon->links() !!}
+			</article>
 		</article>
 	</section>
 @stop
