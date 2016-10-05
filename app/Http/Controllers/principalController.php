@@ -7,6 +7,7 @@ use App\tipos;
 use App\pokemon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class principalController extends Controller
 {
@@ -19,7 +20,8 @@ class principalController extends Controller
    		return view('/inicio', compact('tipos'));
    }
    public function pokedex(){
-   		$pokemons = pokemon::all();
+   		//$pokemons = pokemon::all();
+         $pokemons = DB::table('pokemon')->paginate(10);
          $tipos = tipos::all();
          //$total = sum('select * from tipos');
    		return view('/pokedex', compact('pokemons', 'tipos'));

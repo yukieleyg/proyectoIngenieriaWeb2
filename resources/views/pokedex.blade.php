@@ -23,4 +23,6 @@
 		  </div>
 		</div>
 	@endforeach
+	<!-- {!! $pokemons->links() !!} -->
+	{!! $pokemons->Render() !!}
 @stop

@@ -23,6 +23,7 @@
 				  </div>
 				</div>
 			@endforeach
+			{!! $pokemon->links() !!}
 		</article>
 	</section>
 @stop
