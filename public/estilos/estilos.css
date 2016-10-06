@@ -89,7 +89,7 @@ footer
 
 #pokemon img
 {
-	width: 190px;
+	width: 170px;
 }
 
 #pokePDF
@@ -97,4 +97,15 @@ footer
 	border-bottom: 1px solid black;
 	/*text-align: center;*/
 	width: 270px;
+}
+
+.ataquePokemon
+{
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.paginacion
+{
+	text-align: center;
 }
