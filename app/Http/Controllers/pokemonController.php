@@ -16,11 +16,12 @@ class pokemonController extends Controller
         $dompdf->loadHTML($vista);
         return $dompdf->stream();
     }
-    public function darPoder($id){
+    public function darPoder($id, Request $valores){
     	$pokemon = pokemon::find($id);
     	$pokemon->ataque += 1;
     	$pokemon->save();
-    	return Redirect('/pokedex');
+        return back()->withInput();
+
     }
     public function darPoder2($idp, $idt){
     	$poke = pokemon::find($idp);
@@ -29,6 +30,7 @@ class pokemonController extends Controller
     	$tipos = tipos::all();
     	$tipo = tipos::find($idt);
     	$nombre = $tipo->nombre;
-        return Redirect('/tipos/'.$idt);
+        return back()->withInput();
+        
     }
 }
