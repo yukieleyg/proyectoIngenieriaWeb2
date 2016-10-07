@@ -1,11 +1,11 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2>Pokedex</h2>
+	<h2 style="font-family:pokemon;">Pokedex</h2>
 @stop
 
 @section('contenido')
-	<section>
+	<section align="center">
 		<article>
 			@foreach($pokemons as $pokemon)
 				<!-- <article id="pokemon">
@@ -17,7 +17,7 @@
 
 				<div class="panel panel-primary" id="pokemon">
 				  <div class="panel-heading">
-				    <h3 class="panel-title">{{ $pokemon->id.' - '.$pokemon->nombre }}</h3>
+				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $pokemon->id.' - '.$pokemon->nombre }}</h3>
 				  </div>
 				  <div class="panel-body">
 				    <img src="{{ asset("img/pokemon/$pokemon->foto") }}" alt="">

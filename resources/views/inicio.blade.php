@@ -1,6 +1,6 @@
 @extends('principal')
 @section('encabezado')
-	<h2>Bienvenido Maestro Pokémon</h2>
+	<h2 style="font-family:pokemon;">Bienvenido Maestro Pokémon</h2>
 @stop
 
 @section('contenido')
