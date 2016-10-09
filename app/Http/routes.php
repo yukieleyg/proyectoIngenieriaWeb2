@@ -31,4 +31,4 @@ Route::get('/pdfPokemon/{id}', 'pokemonController@pdfPokemon');
 
 Route::get('/darPoder/{idp}', 'pokemonController@darPoder');
 
-Route::get('/aumentarPoder/{idp}/{idt}', 'pokemonController@aumentarPoder');
+Route::get('/darPoder/{idp}/{idt}', 'pokemonController@darPoder2');

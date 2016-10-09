@@ -6,6 +6,7 @@
 	<script src="{{asset("js/jquery.js")}}"></script>
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
 	<link rel="stylesheet" href="{{asset("estilos/estilos.css")}}">
+	<link rel="stylesheet" href="{{asset("estilos/fuente.css")}}">	
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -38,9 +39,6 @@
 	        </div>
 	        <button type="submit" class="btn btn-default">Submit</button>
 	      </form>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Link</a></li>
-	      </ul>
 	    </div>
 	  </div>
 	</nav>

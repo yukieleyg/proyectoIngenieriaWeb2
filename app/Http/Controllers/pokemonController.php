@@ -17,24 +17,20 @@ class pokemonController extends Controller
         $dompdf->loadHTML($vista);
         return $dompdf->stream();
     }
-    public function darPoder($id){
+    public function darPoder($id, Request $valores){
     	$pokemon = pokemon::find($id);
     	$pokemon->ataque += 1;
     	$pokemon->save();
-    	return Redirect('/pokedex');
+        return back()->withInput();
+
     }
-    public function aumentarPoder($idp, $idt){
+    public function darPoder2($idp, $idt){
     	$poke = pokemon::find($idp);
     	$poke->ataque += 1;
     	$poke->save();
-
-    	//$tipos = tipos::all();
-    	//$tipo = tipos::find($idt);
-    	//$nombre = $tipo->nombre;
-
-    	//$pokemon = DB::table('pokemon AS P')->join('pokemon_tipos AS PT', 'P.id', '=', 'PT.id_pokemon')->join('tipos AS T', 'T.id', '=', 'PT.id_tipo')->where('T.id', '=', $idt)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque','P.descripcion', 'P.foto')->paginate(10);
-
-    	//return Redirect('/tipos/'.$idt, compact('pokemon', 'tipos', 'tipo'));
-        return Redirect('/tipos/'.$idt);
+    	$tipos = tipos::all();
+    	$tipo = tipos::find($idt);
+    	$nombre = $tipo->nombre;
+        return back()->withInput();
     }
 }

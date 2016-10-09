@@ -1,6 +1,8 @@
 body
 {
+	font-family: pokemon;
 	font-size: 16px;
+	font-weight: 100;
 }
 
 footer
@@ -28,7 +30,6 @@ footer
 #altura, #peso, #descripcion
 {
 	font-size: 1.5em;
-	font-weight: bold;
 }
 
 #artPDF01
@@ -101,11 +102,22 @@ footer
 
 .ataquePokemon
 {
-	font-weight: bold;
 	margin-right: 5px;
 }
 
 .paginacion
 {
 	text-align: center;
+}
+table{
+	font-family: "Comic Sans", "Comic Sans MS", "cursive";
+	width: 400px;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+tr{
+    border: 1px solid black;
 }

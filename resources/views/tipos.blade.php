@@ -1,11 +1,11 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2>Pokémon Tipo: {{$tipo->nombre}}</h2>
+	<h2 style="font-family:pokemon;">Pokémon Tipo: {{$tipo->nombre}}</h2>
 @stop
 
 @section('contenido')
-	<section>
+	<section align="center">
 		<!-- <article id="tipos" class="header">
 			@foreach($tipos as $t)
 				<a href="{{url('/tipos')}}/{{$t->id}}" class="btn btn-info">{{$t->nombre}}</a>
@@ -15,7 +15,7 @@
 			@foreach($pokemon as $p)
 				<div class="panel panel-primary" id="pokemon">
 				  <div class="panel-heading">
-				    <h3 class="panel-title">{{ $p->id.' - '.$p->nombre }}</h3>
+				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $p->id.' - '.$p->nombre }}</h3>
 				  </div>
 				  <div class="panel-body">
 				    <img src="{{ asset("img/pokemon/$p->foto") }}" alt="">

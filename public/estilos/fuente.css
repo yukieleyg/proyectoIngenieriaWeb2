@@ -1,0 +1,12 @@
+@font-face{
+	font-family: "pokemon";
+	font-style: normal;
+    font-weight: normal;
+    src: local("?"),url("/proyectoIngenieriaWeb2/public/fonts/PokemonS.ttf") format("truetype");
+}
+@font-face{
+	font-family: "pokemon2";
+	font-style: normal;
+    font-weight: normal;
+    src: local("?"),url("/proyectoIngenieriaWeb2/public/fonts/PokemonH.ttf") format("truetype");
+}
