@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\pokemon;
 use App\tipos;
 use App\Http\Requests;
+use DB;
 
 class pokemonController extends Controller
 {
@@ -22,17 +23,18 @@ class pokemonController extends Controller
     	$pokemon->save();
     	return Redirect('/pokedex');
     }
-    public function darPoder($idp, $idt){
+    public function aumentarPoder($idp, $idt){
     	$poke = pokemon::find($idp);
     	$poke->ataque += 1;
     	$poke->save();
 
-    	$tipos = tipos::all();
-    	$tipo = tipos::find($idt);
-    	$nombre = $tipo->nombre
+    	//$tipos = tipos::all();
+    	//$tipo = tipos::find($idt);
+    	//$nombre = $tipo->nombre;
 
-    	$pokemon = DB::table('pokemon AS P')->join('pokemon_tipos AS PT', 'P.id', '=', 'PT.id_pokemon')->join('tipos AS T', 'T.id', '=', 'PT.id_tipo')->where('T.id', '=', $id)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque','P.descripcion', 'P.foto')->paginate(10);
+    	//$pokemon = DB::table('pokemon AS P')->join('pokemon_tipos AS PT', 'P.id', '=', 'PT.id_pokemon')->join('tipos AS T', 'T.id', '=', 'PT.id_tipo')->where('T.id', '=', $idt)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque','P.descripcion', 'P.foto')->paginate(10);
 
-    	return Redirect('/tipos', compact('pokemon', 'tipos', 'tipo'));
+    	//return Redirect('/tipos/'.$idt, compact('pokemon', 'tipos', 'tipo'));
+        return Redirect('/tipos/'.$idt);
     }
 }
