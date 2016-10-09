@@ -21,7 +21,7 @@ class principalController extends Controller
    }
    public function pokedex(){
    		//$pokemons = pokemon::all();
-         $pokemons = DB::table('pokemon')->paginate(10);
+         $pokemons = DB::table('pokemon')->paginate(12);
          $tipos = tipos::all();
          //$page = currentPage();
          //dd($page);

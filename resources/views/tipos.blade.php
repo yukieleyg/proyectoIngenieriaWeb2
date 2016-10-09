@@ -22,7 +22,7 @@
 				    Peso: {{$p->peso}} kg<br>
 				    Altura: {{$p->altura}} m<br>
 				    <span class="ataquePokemon">Ataque: {{$p->ataque}}</span>
-				    <a href="{{url('/aumentarPoder')}}/{{$p->id}}/{{$tipo->id}}" class="glyphicon glyphicon-plus"></a>
+				    <a href="{{url('/darPoder2')}}/{{$p->id}}/{{$tipo->id}}" class="glyphicon glyphicon-plus"></a>
 				    <br>
 					<a href="{{url('/pdfPokemon')}}/{{$p->id}}">Ver PDF</a>
 				  </div>
