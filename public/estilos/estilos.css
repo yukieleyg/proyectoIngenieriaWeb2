@@ -1,8 +1,9 @@
-body
-{
+body{
 	font-family: pokemon;
 	font-size: 16px;
 	font-weight: 100;
+  	background-image: url("/proyectoIngenieriaWeb2/public/img/background2.png");
+	background-size: cover;
 }
 
 footer
@@ -11,43 +12,9 @@ footer
 	text-align: center;
 	border-top-width: 15%;
 }
-
-/*#pokemon
-{
-	background: rgba(150,150,150,0.2);
-	border-radius: 5px;
-	display: inline-block;
-	text-align: center;
-	width: 20%;
-}
-
-#pokemon span
-{
-	border-bottom: 2px solid black;
-	font-size: 2em;
-	font-weight: bold;
-}*/
 #altura, #peso, #descripcion
 {
 	font-size: 1.5em;
-}
-
-#artPDF01
-{
-	display: inline-block;
-	text-align: center;
-}
-
-#artPDF02
-{
-	display: inline-block;
-	width: 50%;
-}
-
-#artPDF03
-{
-	display: inline-block;
-	width: 45%;
 }
 
 #logo
@@ -79,7 +46,6 @@ footer
 {
 	width: 111px;
 }
-
 #pokemon
 {
 	display: inline-block;
@@ -92,14 +58,6 @@ footer
 {
 	width: 170px;
 }
-
-#pokePDF
-{
-	border-bottom: 1px solid black;
-	/*text-align: center;*/
-	width: 270px;
-}
-
 .ataquePokemon
 {
 	margin-right: 5px;

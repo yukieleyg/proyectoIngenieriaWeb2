@@ -19,9 +19,8 @@ class tiposController extends Controller
     public function mostrarPokemon($id){
     	$tipo = tipos::find($id);
     	$tipos = tipos::all();
-    	
-        $pokemon = DB::table('pokemon AS P')->join('pokemon_tipos AS PT', 'P.id', '=', 'PT.id_pokemon')->join('tipos AS T', 'T.id', '=', 'PT.id_tipo')->where('T.id', '=', $id)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque', 'P.descripcion', 'P.foto')->paginate(10);
+        $pokemon = DB::table('pokemon AS P')->join('pokemon_tipos AS PT', 'P.id', '=', 'PT.id_pokemon')->join('tipos AS T', 'T.id', '=', 'PT.id_tipo')->where('T.id', '=', $id)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque', 'P.descripcion', 'P.foto')->paginate(8);
 
-    	return view('/tipos', compact('pokemon', 'tipos', 'tipo'));
+    	return view('/tipos', compact('pokemon', 'tipos', 'tipo','color'));
     }
 }

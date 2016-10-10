@@ -8,13 +8,6 @@
 	<section align="center">
 		<article>
 			@foreach($pokemons as $pokemon)
-				<!-- <article id="pokemon">
-					<span>{{ $pokemon->nombre }}</span>
-					<br>
-					<img src="{{ asset("img/pokemon/$pokemon->foto") }}" alt="">
-					<a href="">Ver PDF</a>
-				</article> -->
-
 				<div class="panel panel-primary" id="pokemon">
 				  <div class="panel-heading">
 				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $pokemon->id.' - '.$pokemon->nombre }}</h3>

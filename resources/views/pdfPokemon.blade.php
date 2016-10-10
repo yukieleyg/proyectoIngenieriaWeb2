@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{$pokemon->nombre}}</title>
-	<link rel="stylesheet" href="{{asset("estilos/estilos.css")}}">
+	<link rel="stylesheet" href="{{asset("estilos/estilospdf.css")}}">
 </head>
 <body>
 	<header>
@@ -12,44 +12,37 @@
 		</div>
 	</header>
 	<br>
-	<section style="display: inline-block;">
-		<article id="artPDF01">
-			<img id="pokePDF" src="img/pokemon/{{$pokemon->foto}}" alt="">
-		</article>
-		<h1 style="text-align: center;">{{$pokemon->id.' - '.$pokemon->nombre}}</h1>
-	</section>
-	<section>
-		<!--<img src="img/Pokeball.png">-->
-		<table class="table table-striped table-hover " align="center" style= "font-family: 'Times New Roman', Times, serif;">
-			  <tbody>
-			    <tr>
-			      <td >Peso</td>
-			      <td>{{$pokemon->peso}}</td>
-			    </tr>		
-			    <tr>
-			      <td >Altura</td>
-			      <td>{{$pokemon->altura}}</td>
-			    </tr>
-			    <tr>
-			      <td >Poder</td>
-			      <td>Mucho</td>
-			    </tr>
-			    <tr>
-			    	<td >Descripcion</td>
-			    	<td>{{$pokemon->descripcion}}</td>
-			    </tr>
-		</table>
-		<!--<article id="artPDF02">
-			<span id="peso">Peso:</span> <br>
-			 {{$pokemon->peso}}
-			<br>
-			<span id="altura">Altura:</span> <br>
-			{{$pokemon->altura}}
-		</article>
-		<article id="artPDF03">
-			<span id="descripcion">Descripción:</span> <br>
-			{{$pokemon->descripcion}}
-		</article>-->
-	</section>
+	<form>
+		<section style="display: inline-block;">
+			<div id="imagenPokemon">
+				<img id="pokePDF" src="img/pokemon/{{$pokemon->foto}}" alt="">
+			</div>
+			<h1 style="text-align: center; color:white; position:absolute; left: 260px; top:400px; font-size:40px;">{{$pokemon->nombre}}</h1>
+		</section>
+		<section>
+			<table class="table table-striped table-hover" style="text-align: left; position: absolute; top:483px;left:1px; font-size:25px;">
+				  	<tr>
+				  		<td>ID Pokedex</td>
+				  		<td>{{$pokemon->id}}</td>
+				  	</tr>
+				    <tr>
+				      <td >Peso</td>
+				      <td>{{$pokemon->peso}}</td>
+				    </tr>		
+				    <tr>
+				      <td >Altura</td>
+				      <td>{{$pokemon->altura}}</td>
+				    </tr>
+				    <tr>
+				      <td >Poder</td>
+				      <td>{{$pokemon->ataque}}</td>
+				    </tr>
+				    <tr>
+				    	<td >Descripcion</td>
+				    	<td style="font-size:20px; align-text:justify;">{{$pokemon->descripcion}}</td>
+				    </tr>
+			</table>
+		</section>
+	</form>
 </body>
 </html>

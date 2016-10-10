@@ -1,19 +1,27 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2 style="font-family:pokemon;">Pokémon Tipo: {{$tipo->nombre}}</h2>
+	<h2 style="font-family:pokemon;">Pokémon Tipo:{{$tipo->nombre}}</h2>
 @stop
 
 @section('contenido')
 	<section align="center">
-		<!-- <article id="tipos" class="header">
-			@foreach($tipos as $t)
-				<a href="{{url('/tipos')}}/{{$t->id}}" class="btn btn-info">{{$t->nombre}}</a>
-			@endforeach
-		</article> -->
 		<article>
 			@foreach($pokemon as $p)
-				<div class="panel panel-primary" id="pokemon">
+				@if($tipo->nombre ==="Planta" or $tipo->nombre ==="Bicho")
+					<div class="panel panel-success" id="pokemon">
+				@elseif($tipo->nombre==="Volador" or $tipo->nombre==="Agua")
+					<div class="panel panel-info" id="pokemon">
+				@elseif($tipo->nombre==="Veneno" or $tipo->nombre=== "Hada")
+					<div class="panel panel-default" id="pokemon">
+				@elseif($tipo->nombre==="Eléctrico" or $tipo->nombre === "Tierra")
+					<div class="panel panel-warning" id="pokemon">
+				@elseif($tipo->nombre==="Fuego")
+					<div class="panel panel-danger" id="pokemon">
+				@elseif($tipo->nombre==="Normal")
+					<div class="panel panel-primary" id="pokemon">
+				@endif  
+
 				  <div class="panel-heading">
 				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $p->id.' - '.$p->nombre }}</h3>
 				  </div>
