@@ -16,9 +16,9 @@
 					<div class="panel panel-default" id="pokemon">
 				@elseif($tipo->nombre==="Eléctrico" or $tipo->nombre === "Tierra")
 					<div class="panel panel-warning" id="pokemon">
-				@elseif($tipo->nombre==="Fuego")
+				@elseif($tipo->nombre==="Fuego" or $tipo->nombre === "Lucha")
 					<div class="panel panel-danger" id="pokemon">
-				@elseif($tipo->nombre==="Normal")
+				@else
 					<div class="panel panel-primary" id="pokemon">
 				@endif  
 
