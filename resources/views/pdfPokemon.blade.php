@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{$pokemon->nombre}}</title>
+	<link rel="icon" type="image/png" href="/proyectoIngenieriaWeb2/public/img/favicon.ico" />
 	<link rel="stylesheet" href="{{asset("estilos/estilospdf.css")}}">
 </head>
 <body>
@@ -20,22 +21,22 @@
 			<h1 style="text-align: center; color:white; position:absolute; left: 260px; top:400px; font-size:40px;">{{$pokemon->nombre}}</h1>
 		</section>
 		<section>
-			<table class="table table-striped table-hover" style="text-align: left; position: absolute; top:483px;left:1px; font-size:25px;">
+			<table class="table table-striped table-hover" style="text-align: center; position: absolute; top:483px;left:1px; font-size:25px;">
 				  	<tr>
 				  		<td>ID Pokedex</td>
-				  		<td>{{$pokemon->id}}</td>
+				  		<td># {{$pokemon->id}}</td>
 				  	</tr>
 				    <tr>
 				      <td >Peso</td>
-				      <td>{{$pokemon->peso}}</td>
+				      <td>{{$pokemon->peso}} Kg.</td>
 				    </tr>		
 				    <tr>
 				      <td >Altura</td>
-				      <td>{{$pokemon->altura}}</td>
+				      <td>{{$pokemon->altura}} Mts.</td>
 				    </tr>
 				    <tr>
 				      <td >Poder</td>
-				      <td>{{$pokemon->ataque}}</td>
+				      <td>{{$pokemon->ataque}} Pts</td>
 				    </tr>
 				    <tr>
 				    	<td >Descripcion</td>

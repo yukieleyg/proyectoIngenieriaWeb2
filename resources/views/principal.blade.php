@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pokémon</title>
+	<link rel="icon" type="image/png" href="/proyectoIngenieriaWeb2/public/img/favicon.ico" />
 	<script src="{{asset("js/jquery.js")}}"></script>
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
 	<link rel="stylesheet" href="{{asset("estilos/estilos.css")}}">
