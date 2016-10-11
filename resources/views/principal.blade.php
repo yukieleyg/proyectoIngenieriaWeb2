@@ -34,18 +34,19 @@
 	          </ul>
 	        </li>
 	      </ul>
-	      <form class="navbar-form navbar-left" role="search">
+	      <form class="navbar-form navbar-left" role="search" id="buscar" action="{{url('/buscar')}}" method="POST">
 	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
+	        	<input type="hidden" name="_token" value="{{csrf_token()}}">
+	          	<input type="text" class="form-control" placeholder="Pokemon" name="pokemon_input">
+	        	<button type="submit" class="btn btn-default">Buscar</a>
 	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
 	      </form>
 	    </div>
 	  </div>
 	</nav>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12"> 
 				@yield('encabezado')
 				<hr>
 				@yield('contenido')

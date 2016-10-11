@@ -32,3 +32,7 @@ Route::get('/pdfPokemon/{id}', 'pokemonController@pdfPokemon');
 Route::get('/darPoder/{idp}', 'pokemonController@darPoder');
 
 Route::get('/darPoder2/{idp}/{idt}', 'pokemonController@darPoder2');
+
+Route::post('/buscar','principalController@buscar');
+
+Route::get('/showPokemon','principalController@showPokemon');

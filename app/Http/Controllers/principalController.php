@@ -20,12 +20,16 @@ class principalController extends Controller
    		return view('/inicio', compact('tipos'));
    }
    public function pokedex(){
-   		//$pokemons = pokemon::all();
          $pokemons = DB::table('pokemon')->paginate(8);
          $tipos = tipos::all();
-         //$page = currentPage();
-         //dd($page);
-         //$total = sum('select * from tipos');
    		return view('/pokedex', compact('pokemons', 'tipos','page'));
+   }
+   public function buscar(Request $request){
+      $nombre  = $request->input('pokemon_input');
+      $tipos   = tipos::all();
+      $pokemon = DB::table('pokemon AS P')->where('P.nombre', '=', $nombre)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque', 'P.descripcion', 'P.foto')->get();      foreach ($pokemon as $p) {
+          return view('/mostrarPokemon',compact('tipos','p'));            
+      }
+      return view('/pokedex');
    }
 }

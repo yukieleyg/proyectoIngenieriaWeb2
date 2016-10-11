@@ -53,11 +53,20 @@ footer
 	text-align: center;
 	width: 19%;
 }
-
+#panelPokemon{
+	margin-left: 450px;
+	text-align: center;
+	width: 19%;
+}
 #pokemon img
 {
 	width: 170px;
 }
+#panelPokemon img
+{
+	width: 170px;
+}
+
 .ataquePokemon
 {
 	margin-right: 5px;
