@@ -32,4 +32,9 @@ class principalController extends Controller
       }
       return view('/pokedex');
    }
+   public function pokemonEspecifico($id){
+      $pokemon = pokemon::find($id);
+      $tipos   = tipos::all();
+      return view('/pokemonEspecifico',compact('pokemon','tipos'));
+   }
 }

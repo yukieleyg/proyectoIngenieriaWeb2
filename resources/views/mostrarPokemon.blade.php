@@ -14,7 +14,7 @@
 	    <img src="{{ asset("img/pokemon/$p->foto") }}" alt="">
 	    Peso: {{$p->peso}} kg<br>
 	    Altura: {{$p->altura}} m<br>
-	    <span class="ataquePokemon">Ataque: {{$p->ataque}}</span>
+	    <span class="ataquePokemon">PC: {{$p->ataque}}</span>
 	    <a href="{{url('/darPoder')}}/{{$p->id}}" class="glyphicon glyphicon-plus"></a>
 	    <br>
 		<a href="{{url('/pdfPokemon')}}/{{$p->id}}">Ver PDF</a>
