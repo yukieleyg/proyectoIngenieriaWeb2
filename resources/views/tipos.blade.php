@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2 style="font-family:pokemon;">Pokémon Tipo:{{$tipo->nombre}}</h2>
+	<h2 style="font-family:pokemon;">Pokémon Tipo:{{$tipo->nombre}} ({{$cantidad}})</h2>
 @stop
 
 @section('contenido')
