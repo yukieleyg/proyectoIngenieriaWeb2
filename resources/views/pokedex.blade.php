@@ -13,10 +13,12 @@
 				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $pokemon->id.' - '.$pokemon->nombre }}</h3>
 				  </div>
 				  <div class="panel-body">
-				    <img src="{{ asset("img/pokemon/$pokemon->foto") }}" alt="">
+				  	<a  href="{{url('/pokemonEspecifico')}}/{{$pokemon->id}}" >
+				   	 <img src="{{ asset("img/pokemon/$pokemon->foto") }}">
+				   	</a>
 				    Peso: {{$pokemon->peso}} kg<br>
 				    Altura: {{$pokemon->altura}} m<br>
-				    <span class="ataquePokemon">Ataque: {{$pokemon->ataque}}</span>
+				    <span class="ataquePokemon">PC: {{$pokemon->ataque}}</span>
 				    <a href="{{url('/darPoder')}}/{{$pokemon->id}}" class="glyphicon glyphicon-plus"></a>
 				    <br>
 					<a href="{{url('/pdfPokemon')}}/{{$pokemon->id}}">Ver PDF</a>

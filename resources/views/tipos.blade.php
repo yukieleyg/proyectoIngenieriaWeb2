@@ -21,15 +21,16 @@
 				@else
 					<div class="panel panel-primary" id="pokemon">
 				@endif  
-
 				  <div class="panel-heading">
 				    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $p->id.' - '.$p->nombre }}</h3>
 				  </div>
 				  <div class="panel-body">
-				    <img src="{{ asset("img/pokemon/$p->foto") }}" alt="">
+				  	<a  href="{{url('/pokemonEspecifico')}}/{{$p->id}}" >
+				   	 <img src="{{ asset("img/pokemon/$p->foto") }}">
+				   	</a>
 				    Peso: {{$p->peso}} kg<br>
 				    Altura: {{$p->altura}} m<br>
-				    <span class="ataquePokemon">Ataque: {{$p->ataque}}</span>
+				    <span class="ataquePokemon">PC: {{$p->ataque}}</span>
 				    <a href="{{url('/darPoder2')}}/{{$p->id}}/{{$tipo->id}}" class="glyphicon glyphicon-plus"></a>
 				    <br>
 					<a href="{{url('/pdfPokemon')}}/{{$p->id}}">Ver PDF</a>

@@ -26,7 +26,6 @@ footer
 {
 	margin: 0 auto;
 }
-
 #seccion01 article
 {
 	text-align: center;
@@ -53,10 +52,21 @@ footer
 	text-align: center;
 	width: 19%;
 }
+#panelBody{
+	text-align: left;
+	font-size: 25px;
+}
 #panelPokemon{
 	margin-left: 450px;
 	text-align: center;
 	width: 19%;
+}
+#panelPokemonE img{
+	width: 250px;
+}
+#panelPokemonE{
+	width: 50%;	
+	margin-left: 300px;
 }
 #pokemon img
 {
