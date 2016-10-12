@@ -27,7 +27,8 @@ class principalController extends Controller
    public function buscar(Request $request){
       $nombre  = $request->input('pokemon_input');
       $tipos   = tipos::all();
-      $pokemon = DB::table('pokemon AS P')->where('P.nombre', '=', $nombre)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque', 'P.descripcion', 'P.foto')->get();      foreach ($pokemon as $p) {
+      $pokemon = DB::table('pokemon AS P')->where('P.nombre', '=', $nombre)->select('P.id', 'P.nombre', 'P.altura', 'P.peso', 'P.ataque', 'P.descripcion', 'P.foto')->get();     
+      foreach ($pokemon as $p) {
           return view('/mostrarPokemon',compact('tipos','p'));            
       }
       return view('/pokedex');
@@ -35,6 +36,13 @@ class principalController extends Controller
    public function pokemonEspecifico($id){
       $pokemon = pokemon::find($id);
       $tipos   = tipos::all();
-      return view('/pokemonEspecifico',compact('pokemon','tipos'));
+      $tiposPokemon = DB::table('pokemon_tipos as P')->where('P.id_pokemon','=',$id)->select('P.id_tipo')->get();
+      $tNombres;
+      foreach ($tiposPokemon as $p) {
+         $id_tipo = $p->id_tipo;
+         $nombresTipo = DB::table('tipos as t')->where('t.id','=',$id_tipo)->select('t.nombre','t.id')->get();
+         $tNombres[]=$nombresTipo[0]->nombre;
+      }
+      return view('/pokemonEspecifico',compact('pokemon','tipos','tNombres'));
    }
 }
