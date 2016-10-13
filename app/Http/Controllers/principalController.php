@@ -6,6 +6,7 @@ use App\pokemon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Alert;
 class principalController extends Controller
 {
    public function index(){
@@ -18,8 +19,10 @@ class principalController extends Controller
    }
    public function pokedex(){
          $pokemons = DB::table('pokemon')->paginate(8);
+         //$cantidad = DB::select('select count(*) from pokemon');
+         $cantidad = count(pokemon::all());
          $tipos = tipos::all();
-         return view('/pokedex', compact('pokemons', 'tipos','page'));
+   		return view('/pokedex', compact('pokemons','cantidad','tipos','page'));
    }
    public function buscar(Request $request){
       $nombre  = $request->input('pokemon_input');
@@ -28,7 +31,11 @@ class principalController extends Controller
       foreach ($pokemon as $p) {
           return view('/mostrarPokemon',compact('tipos','p'));            
       }
-      return view('/pokedex');
+      //$cantidad = count(pokemon::all());
+      //$pokemons = DB::table('pokemon')->paginate(8);
+      //Alert::error('El Pokémon que busca no fue encontrado, intenta con otro nombre...');
+      alert()->error('El Pokémon que busca no fue encontrado, intenta con otro nombre...')->persistent('OK');
+      return Redirect('/pokedex');//, compact('pokemons','cantidad','tipos','page'));
    }
    public function pokemonEspecifico($id){
       $pokemon = pokemon::find($id);

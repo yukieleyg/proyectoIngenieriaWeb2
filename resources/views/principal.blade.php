@@ -7,7 +7,8 @@
 	<script src="{{asset("js/jquery.js")}}"></script>
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
 	<link rel="stylesheet" href="{{asset("estilos/estilos.css")}}">
-	<link rel="stylesheet" href="{{asset("estilos/fuente.css")}}">	
+	<link rel="stylesheet" href="{{asset("estilos/fuente.css")}}">
+	<link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">	
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -44,6 +45,10 @@
 	    </div>
 	  </div>
 	</nav>
+	<!-- <div class="alert alert-dismissible alert-danger">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+	</div> -->
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12"> 
@@ -58,5 +63,8 @@
 		Ingeniería Web &copy; 2016
 	</footer>
 	<script src="{{ asset("js/bootstrap.js") }}"></script>
+	<script src="sweetalert-master/dist/sweetalert.min.js"></script> 
+	<!-- Include this after the sweet alert js file -->
+    @include('sweet::alert')
 </body>
 </html>

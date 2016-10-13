@@ -21,7 +21,7 @@
 			<h1 style="text-align: center; color:white; position:absolute; left: 260px; top:400px; font-size:40px;">{{$pokemon->nombre}}</h1>
 		</section>
 		<section>
-			<table class="table table-striped table-hover" style="text-align: center; position: absolute; top:483px;left:1px; font-size:25px;">
+			<table class="table table-striped table-hover" style="text-align: center; position: absolute; top:483px;left:1.5px; font-size:25px;">
 				  	<tr>
 				  		<td>ID Pokedex</td>
 				  		<td># {{$pokemon->id}}</td>
