@@ -19,41 +19,41 @@
 	    <a href="{{url('/darPoder')}}/{{$pokemon->id}}" class="glyphicon glyphicon-plus"></a>
 	    <br>
 	    Tipos: <br>
-	     @foreach($tNombres as $nombre)
-	  	@if($nombre=="Planta")
-	    	<a href="{{url('/tipos')}}/1" class="glyphicon glyphicon-tree-deciduous"></a>
-	  	@elseif($nombre=="Veneno")
-		    <a href="url('/tipos/2')" class="glyphicon glyphicon-warning-sign"></a>
-	  	@elseif($nombre=="Fuego")
-		    <a href="{{url('/tipos')}}/3" class="glyphicon glyphicon-fire"></a>
-	  	@elseif($nombre=="Volador")
-		    <a href="{{url('/tipos')}}/4" class="glyphicon glyphicon-send"></a>
-	  	@elseif($nombre=="Agua")
-		    <a href="{{url('/tipos')}}/5" class="glyphicon glyphicon-tint"></a>
-	  	@elseif($nombre=="Bicho")
-		    <a href="{{url('/tipos')}}/6" class="glyphicon glyphicon-leaf"></a>
-	  	@elseif($nombre=="Normal")
-		    <a href="{{url('/tipos')}}/7" class="glyphicon glyphicon-record"></a>
-	  	@elseif($nombre=="Tierra")
-	    	<a href="{{url('/tipos')}}/9" class="glyphicon glyphicon-globe"></a>
-	  	@elseif($nombre=="Electrico")
-	    	<a href="{{url('/tipos')}}/8" class="glyphicon glyphicon-flash"></a>
-	  	@elseif($nombre=="Lucha")
-	    	<a href="{{url('/tipos')}}/11" class="glyphicon glyphicon-link"></a>
-	  	@elseif($nombre=="Hada")
-	    	<a href="{{url('/tipos')}}/10" class="glyphicon glyphicon-heart-empty"></a>
-	  	@elseif($nombre=="Roca")
-	    	<a href="{{url('/tipos')}}/13" class="glyphicon glyphico-registration-mark"></a>
-	  	@elseif($nombre=="Hielo")
-		    <a href="{{url('/tipos')}}/15" class="glyphicon -ice-lolly-tasted"></a>
-	  	@elseif($nombre=="Psiquico")
-	   		<a href="{{url('/tipos')}}/12" class="glyphicon glyphicon-eye-open"></a>
-	  	@elseif($nombre=="Fantasma")
-		    <a href="{{url('/tipos')}}/16" class="glyphicon glyphicon-cloud"></a>
-	  	@elseif($nombre=="Acero")
-		    <a href="{{url('/tipos')}}/14" class="glyphicon glyphicon-wrench"></a>
+	     @foreach($pokemons as $p)
+	  	@if($p->nombre=="Planta")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-tree-deciduous"></a>
+	  	@elseif($p->nombre=="Veneno")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-warning-sign"></a>
+	  	@elseif($p->nombre=="Fuego")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-fire"></a>
+	  	@elseif($p->nombre=="Volador")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-send"></a>
+	  	@elseif($p->nombre=="Agua")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-tint"></a>
+	  	@elseif($p->nombre=="Bicho")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-leaf"></a>
+	  	@elseif($p->nombre=="Normal")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-record"></a>
+	  	@elseif($p->nombre=="Tierra")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-globe"></a>
+	  	@elseif($p->nombre=="Eléctrico")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-flash"></a>
+	  	@elseif($p->nombre=="Lucha")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-link"></a>
+	  	@elseif($p->nombre=="Hada")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-heart-empty"></a>
+	  	@elseif($p->nombre=="Roca")
+	    	<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphico-registration-mark"></a>
+	  	@elseif($p->nombre=="Hielo")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon -ice-lolly-tasted"></a>
+	  	@elseif($p->nombre=="Psiquico")
+	   		<a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-eye-open"></a>
+	  	@elseif($p->nombre=="Fantasma")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-cloud"></a>
+	  	@elseif($p->nombre=="Acero")
+		    <a href="{{url('/tipos')}}/{{$p->id}}" class="glyphicon glyphicon-wrench"></a>
 	  	@else
-	    	<a href="url(/tipos/)" class="glyphicon glyphicon-question-sign"></a>
+	    	<a href="{{url('/pokedex')}}" class="glyphicon glyphicon-question-sign"></a>
 	    @endif
 	@endforeach
 	<br>

@@ -1,28 +1,25 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\tipos;
 use App\pokemon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-
 class principalController extends Controller
 {
    public function index(){
          $tipos = tipos::all();
-   		return view('/principal', compact('tipos'));
+         return view('/principal', compact('tipos'));
    }
    public function home(){
          $tipos = tipos::all();
-   		return view('/inicio', compact('tipos'));
+         return view('/inicio', compact('tipos'));
    }
    public function pokedex(){
          $pokemons = DB::table('pokemon')->paginate(8);
          $tipos = tipos::all();
-   		return view('/pokedex', compact('pokemons', 'tipos','page'));
+         return view('/pokedex', compact('pokemons', 'tipos','page'));
    }
    public function buscar(Request $request){
       $nombre  = $request->input('pokemon_input');
@@ -37,12 +34,15 @@ class principalController extends Controller
       $pokemon = pokemon::find($id);
       $tipos   = tipos::all();
       $tiposPokemon = DB::table('pokemon_tipos as P')->where('P.id_pokemon','=',$id)->select('P.id_tipo')->get();
-      $tNombres;
+      $nombresTipo;
       foreach ($tiposPokemon as $p) {
          $id_tipo = $p->id_tipo;
-         $nombresTipo = DB::table('tipos as t')->where('t.id','=',$id_tipo)->select('t.nombre','t.id')->get();
-         $tNombres[]=$nombresTipo[0]->nombre;
+         $nombresTipo[] = DB::table('tipos as t')->where('t.id','=',$id_tipo)->select('t.nombre','t.id')->get();
       }
-      return view('/pokemonEspecifico',compact('pokemon','tipos','tNombres'));
+      $pokemons;
+      foreach ($nombresTipo as $p) {
+         $pokemons[]=$p[0];
+      }
+      return view('/pokemonEspecifico',compact('pokemon','tipos','pokemons'));
    }
 }
