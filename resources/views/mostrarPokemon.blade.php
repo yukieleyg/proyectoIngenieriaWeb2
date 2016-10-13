@@ -11,7 +11,9 @@
 	    <h3 class="panel-title" style="font-family:pokemon; font-weight: 100;">{{ $p->id.' - '.$p->nombre }}</h3>
 	  </div>
 	  <div class="panel-body">
-	    <img src="{{ asset("img/pokemon/$p->foto") }}" alt="">
+	  	<a  href="{{url('/pokemonEspecifico')}}/{{$p->id}}" >
+	    	<img src="{{ asset("img/pokemon/$p->foto") }}" alt="">
+	    </a>
 	    Peso: {{$p->peso}} kg<br>
 	    Altura: {{$p->altura}} m<br>
 	    <span class="ataquePokemon">PC: {{$p->ataque}}</span>

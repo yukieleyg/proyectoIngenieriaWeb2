@@ -23,7 +23,7 @@
 	  	@if($nombre=="Planta")
 	    	<a href="{{url('/tipos')}}/1" class="glyphicon glyphicon-tree-deciduous"></a>
 	  	@elseif($nombre=="Veneno")
-		    <a href="url('/tipos/2')" class="glyphicon glyphicon-warning-sign"></a>
+		    <a href="{{url('/tipos')}}/2" class="glyphicon glyphicon-warning-sign"></a>
 	  	@elseif($nombre=="Fuego")
 		    <a href="{{url('/tipos')}}/3" class="glyphicon glyphicon-fire"></a>
 	  	@elseif($nombre=="Volador")
@@ -36,17 +36,17 @@
 		    <a href="{{url('/tipos')}}/7" class="glyphicon glyphicon-record"></a>
 	  	@elseif($nombre=="Tierra")
 	    	<a href="{{url('/tipos')}}/9" class="glyphicon glyphicon-globe"></a>
-	  	@elseif($nombre=="Electrico")
+	  	@elseif($nombre=="Eléctrico")
 	    	<a href="{{url('/tipos')}}/8" class="glyphicon glyphicon-flash"></a>
 	  	@elseif($nombre=="Lucha")
 	    	<a href="{{url('/tipos')}}/11" class="glyphicon glyphicon-link"></a>
 	  	@elseif($nombre=="Hada")
 	    	<a href="{{url('/tipos')}}/10" class="glyphicon glyphicon-heart-empty"></a>
 	  	@elseif($nombre=="Roca")
-	    	<a href="{{url('/tipos')}}/13" class="glyphicon glyphico-registration-mark"></a>
+	    	<a href="{{url('/tipos')}}/13" class="glyphicon glyphicon-registration-mark"></a>
 	  	@elseif($nombre=="Hielo")
-		    <a href="{{url('/tipos')}}/15" class="glyphicon -ice-lolly-tasted"></a>
-	  	@elseif($nombre=="Psiquico")
+		    <a href="{{url('/tipos')}}/15" class="glyphicon glyphicon-ice-lolly-tasted"></a>
+	  	@elseif($nombre=="Psíquico")
 	   		<a href="{{url('/tipos')}}/12" class="glyphicon glyphicon-eye-open"></a>
 	  	@elseif($nombre=="Fantasma")
 		    <a href="{{url('/tipos')}}/16" class="glyphicon glyphicon-cloud"></a>
